@@ -39,8 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-# Ignore package.json
-package.json
+
 
 # Ignore VS Code settings
 .vscode/
