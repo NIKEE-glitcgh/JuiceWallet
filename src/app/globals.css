@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --surface: #ffffff; /* card / surface color */
+  --muted: #6b7280; /* muted text */
+  --header-bg: rgba(249, 250, 251, 0.8);
+  --footer-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --accent: #2563eb; /* blue-600 */
+  --accent-hover: #1e40af; /* blue-700 */
+}
+
+/* Chat bubble / icon colors */
+:root {
+  --chat-bg: #f7f9ff;
+  --chat-inner: #ffffff;
+  --chat-accent: #017bfd;
+}
+
+html.dark {
+  --chat-bg: #071129;
+  --chat-inner: #0b1220;
+  --chat-accent: #60a5fa;
+}
+
+/* CSS variables are defined on :root and `html.dark` above. */
+
+/* Dark theme is controlled via the `dark` class on <html> */
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --surface: #0b1220; /* darker card surface */
+  --muted: #9ca3af;
+  --header-bg: rgba(15, 23, 42, 0.8);
+  --footer-bg: #0b1220;
+  --border-color: #1f2937;
+  --accent: #60a5fa; /* lighter blue for dark */
+  --accent-hover: #3b82f6;
+}
+
+/* Ensure footer stays light even when html has .dark class */
+html.dark .footer-always-light {
+  background-color: #f3f6f9 !important;
+  border-top: 1px solid #e6eef6 !important;
+  color: #334155 !important;
+}
+
+html.dark .footer-always-light a { color: #2563eb !important; }
+html.dark .footer-always-light a:hover { color: #1e40af !important; }
+
+/* Theme helper classes used by components (keeps markup readable) */
+.theme-foreground { color: var(--foreground); }
+.theme-muted { color: var(--muted); }
+.theme-surface { background-color: var(--surface); }
+.theme-link { color: var(--accent); }
+.theme-link:hover { color: var(--accent-hover); }
+
+/* Force footer to always stay light */
+.footer-always-light {
+  background-color: #f3f6f9 !important; /* adjusted to match screenshot */
+  border-top: 1px solid #e6eef6 !important;
+  color: #334155 !important; /* darker neutral for primary footer text */
+  width: 100%;
+  box-shadow: none !important;
+}
+.footer-always-light * {
+  background-color: transparent !important; /* avoid descendant dark bg overrides */
+}
+.footer-always-light a { color: #2563eb !important; }
+.footer-always-light a:hover { color: #1e40af !important; }
+.footer-always-light .text-gray-400 { color: #9ca3af !important; }
+.footer-always-light .text-gray-600 { color: #6b7280 !important; }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Make commonly used 'bg-white' utility follow the surface variable so cards switch colors
+   Note: this overrides Tailwind's utility; keep this minimal and only for surface-level elements. */
+.bg-white {
+  background-color: var(--surface) !important;
+}
+
+.text-gray-600 {
+  color: var(--muted) !important;
+}
