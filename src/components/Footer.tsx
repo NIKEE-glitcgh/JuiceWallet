@@ -6,7 +6,7 @@ export function Footer() {
   const { t } = useTranslation();
 
   return (
-  <footer className="footer-always-light">
+    <footer className="footer-always-light">
       <div className="max-w-4xl mx-auto px-4 py-10 text-center">
         {/* Language switcher centered like the screenshot */}
         <div className="flex justify-center mb-4">
@@ -24,13 +24,13 @@ export function Footer() {
           </p>
 
           <div className="flex items-center justify-center gap-3 text-sm mb-4">
-            <a href="/privacy" className="text-blue-600 hover:text-blue-700">Privacy Policy</a>
+            <a href="/privacy" className="text-gray-400 hover:text-blue-700">Privacy Policy</a>
             <span className="text-gray-400">|</span>
-            <a href="/legal" className="text-blue-600 hover:text-blue-700">Terms of Service</a>
+            <a href="/legal" className="text-gray-400 hover:text-blue-700">Terms of Service</a>
             <span className="text-gray-400">|</span>
-            <a href="/cookie-policy" className="text-blue-600 hover:text-blue-700">Cookie Policy</a>
+            <a href="/cookie-policy" className="text-gray-400 hover:text-blue-700">Cookie Policy</a>
             <span className="text-gray-400">|</span>
-            <a href="/sitemap" className="text-blue-600 hover:text-blue-700">Sitemap</a>
+            <a href="/sitemap" className="text-gray-400 hover:text-blue-700">Sitemap</a>
           </div>
 
           <p className="text-sm text-gray-500">

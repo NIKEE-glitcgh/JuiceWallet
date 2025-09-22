@@ -28,13 +28,22 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileCategory, setMobileCategory] = useState<string | null>(null);
 
+  const getLanguageName = (code: string) => {
+    try {
+      const display = new Intl.DisplayNames([i18n.language || "en"], { type: "language" });
+      return display.of(code) || code;
+    } catch {
+      return code;
+    }
+  };
+
   const languages = [
-    { code: "en", name: t("languages.en") },
-    { code: "zh", name: t("languages.zh") },
-    { code: "pt", name: t("languages.pt") },
-    { code: "es", name: t("languages.es") },
-    { code: "fr", name: t("languages.fr") },
-    { code: "ja", name: t("languages.ja") },
+    { code: "en", name: getLanguageName("en") },
+    { code: "zh", name: getLanguageName("zh") },
+    { code: "pt", name: getLanguageName("pt") },
+    { code: "es", name: getLanguageName("es") },
+    { code: "fr", name: getLanguageName("fr") },
+    { code: "ja", name: getLanguageName("ja") },
   ];
 
   const handleLanguageChange = async (langCode: string) => {
@@ -166,7 +175,7 @@ export function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm"
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm px-12"
       style={{ backgroundColor: 'var(--header-bg)', borderBottom: '1px solid var(--border-color)' }}
     >
       <div className="container max-w-[98%] mx-4 px-0 h-16 flex items-center justify-around">
